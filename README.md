@@ -11,7 +11,7 @@
     ║      |___|           ╚══╝╚══╝  ╚═╝  ╚═╝ ╚══════╝         ║
     ║      // X \\            w1r36u4rd_r0u71n6_z3r0            ║
     ║     << / \ >>    N O R D V P N   W I R E G U A R D        ║
-    ║    // /   \ \\   C O N F I G   G E N E R A T O R   v1.0   ║
+    ║    // /   \ \\   C O N F I G   G E N E R A T O R   v1.1   ║
     ║   <<_/     \_>>                                           ║
     ║                                                           ║
     ║      [ c0ded by VladimirTaDev | d2lq6sw3@duck.com ]       ║
