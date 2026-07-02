@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.2 — 2026-07-01
+
+### 🟠 Security Improvements
+- **macOS/Linux Support**: Added a `chmod 600` fallback to ensure generated config files are restricted to the current user on non-Windows environments.
+- **Secure File Creation**: Restrictive ACLs are now applied *before* writing the sensitive configuration content to disk, closing a brief vulnerability window.
+- **Canonical AllowedIPs**: Updated the configuration to use the canonical `::/0` instead of `::0/0` for maximum compatibility with strict WireGuard parsers.
+- **Cleanup Best Practices**: Included `$secureToken` in the cleanup routine and nullified the token after creating authorization headers. Added documentation that plaintext secrets in managed memory are "best-effort" to wipe.
+
+### 🟡 Correctness & Bug Fixes
+- **Accurate Success Message**: The "All done!" message now correctly appears only when a configuration is successfully generated, rather than printing after a failed server fetch.
+- **Context-Aware Quick Access**: Default Quick Access shortcuts (Miami, New York) are now only displayed when the user explicitly selects "United States", avoiding confusion when selecting other countries.
+- **Consistent Exit Behavior**: Replaced duplicated prompt-then-exit blocks with a centralized `Stop-Script` helper function to ensure variables are always scrubbed properly upon early exits.
+
+### ⚪ Minor / Best Practices
+- **Strict Mode Compatibility**: Added `#Requires -Version 5.1` to ensure compatibility and `Set-StrictMode -Version Latest` to catch undeclared variables early.
+- **Detailed Error Context**: The authentication `catch` block now displays the underlying exception message so users can distinguish between a bad token, network failure, or TLS error.
+- **UTF-8 Encoding**: Changed the generated `.conf` file encoding from `Ascii` to `utf8` for safer string handling.
+- **Documentation**: Added code comments clarifying the expected object shapes for the interactive terminal selection menu.
+
 ## v1.1 — 2026-06-29
 
 ### 🔴 Critical Fix

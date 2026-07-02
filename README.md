@@ -11,7 +11,7 @@
     ║      |___|           ╚══╝╚══╝  ╚═╝  ╚═╝ ╚══════╝         ║
     ║      // X \\            w1r36u4rd_r0u71n6_z3r0            ║
     ║     << / \ >>    N O R D V P N   W I R E G U A R D        ║
-    ║    // /   \ \\   C O N F I G   G E N E R A T O R   v1.1   ║
+    ║    // /   \ \\   C O N F I G   G E N E R A T O R   v1.2   ║
     ║   <<_/     \_>>                                           ║
     ║                                                           ║
     ║      [ c0ded by VladimirTaDev | d2lq6sw3@duck.com ]       ║
@@ -35,7 +35,7 @@ Just paste your NordVPN Access Token, pick a server, and get a `.conf` file you 
 - **"Best Server" Auto-Selection** — Press Enter without choosing to let NordVPN's API recommend the fastest, least-loaded server globally, per country, or per city.
 - **Ready-to-Import Config Files** — Generates standard `.conf` files that can be uploaded directly to any WireGuard client or router.
 - **Built and Tested for Asus Routers** — Specifically designed and tested on Asuswrt-Merlin firmware (GT-AXE16000), but works with any WireGuard client.
-- **IPv6 Leak Protection** — Routes both IPv4 and IPv6 traffic through the VPN tunnel (`0.0.0.0/0, ::0/0`).
+- **IPv6 Leak Protection** — Routes both IPv4 and IPv6 traffic through the VPN tunnel (`0.0.0.0/0, ::/0`).
 - **Redundant DNS** — Uses both NordVPN DNS servers (`103.86.96.100`, `103.86.99.100`) for reliability.
 - **Security First** — Token input is masked, TLS 1.2+ is enforced, all sensitive variables are scrubbed from memory on exit, and no data is sent to third parties.
 
@@ -141,7 +141,8 @@ DNS Server  : 103.86.96.100, 103.86.99.100
 [Peer]
 Server Public Key : ********************************
 Endpoint Address  : 185.93.2.137:51820
-Allowed IPs       : 0.0.0.0/0, ::0/0
+Allowed IPs       : 0.0.0.0/0, ::/0
+Keepalive         : 25
 =================================================
 
 Would you like to generate a local .conf file for easy router import? (Y/N): Y
