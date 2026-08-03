@@ -95,12 +95,6 @@ When you download a PowerShell script from the internet, Windows automatically m
 Unblock-File -Path ".\Get-NordVPN-WireGuard-v1.2.ps1"
 ```
 
-**Option C — Use the included helper script:**
-
-A helper script `Unblock Downloaded ps1.ps1` is included in the repo. Right-click it → **Properties** → check **Unblock** → **OK**, then right-click it and select **Run with PowerShell**. It will automatically unblock all `.ps1` files in the same folder.
-
-> **Note:** This does not change your system's execution policy. It only removes the internet-download flag from the file.
-
 ### 3. Get Your NordVPN Access Token
 
 1. Go to [NordVPN Access Tokens](https://my.nordaccount.com/dashboard/nordvpn/access-tokens/authorize/)
