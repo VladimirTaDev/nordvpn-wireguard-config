@@ -76,21 +76,46 @@ Click the green **Code** button above → **Download ZIP**, or clone the repo:
 git clone https://github.com/VladimirTaDev/nordvpn-wireguard-config.git
 ```
 
-### 2. Get Your NordVPN Access Token
+### 2. Unblock the Script (Windows only — required after downloading)
+
+When you download a PowerShell script from the internet, Windows automatically marks it as untrusted with a hidden security tag called the **Mark of the Web**. This causes PowerShell to block the script from running — even if your execution policy is set correctly — with an error like:
+
+> *"cannot be loaded because running scripts is disabled"*  
+> *"is not digitally signed"*
+
+**You only need to do this once, right after downloading.**
+
+**Option A — GUI (easiest):**
+1. Right-click `Get-NordVPN-WireGuard-v1.2.ps1` → **Properties**
+2. At the bottom, check the **Unblock** checkbox
+3. Click **OK**
+
+**Option B — PowerShell command:**
+```powershell
+Unblock-File -Path ".\Get-NordVPN-WireGuard-v1.2.ps1"
+```
+
+**Option C — Use the included helper script:**
+
+A helper script `Unblock Downloaded ps1.ps1` is included in the repo. Right-click it → **Properties** → check **Unblock** → **OK**, then right-click it and select **Run with PowerShell**. It will automatically unblock all `.ps1` files in the same folder.
+
+> **Note:** This does not change your system's execution policy. It only removes the internet-download flag from the file.
+
+### 3. Get Your NordVPN Access Token
 
 1. Go to [NordVPN Access Tokens](https://my.nordaccount.com/dashboard/nordvpn/access-tokens/authorize/)
 2. Log in and generate a new token
 3. Copy the token (you'll paste it into the script when asked)
 
-### 3. Run the Script
+### 4. Run the Script
 
-Right-click `Get-NordVPN-WireGuard.ps1` and select **Run with PowerShell**, or run from a terminal:
+Right-click `Get-NordVPN-WireGuard-v1.2.ps1` and select **Run with PowerShell**, or run from a terminal:
 
 ```powershell
-.\Get-NordVPN-WireGuard.ps1
+.\Get-NordVPN-WireGuard-v1.2.ps1
 ```
 
-### 4. Follow the Prompts
+### 5. Follow the Prompts
 
 ```
 Please paste your NordVPN Access Token: ********
@@ -123,7 +148,7 @@ Choice: 1
 Choice: Q1
 ```
 
-### 5. Get Your Config
+### 6. Get Your Config
 
 The script displays all WireGuard settings and optionally generates a `.conf` file:
 
